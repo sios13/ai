@@ -61,6 +61,8 @@ export const VERCEL_GATEWAY_CHAT_MODELS = [
   'anthropic/claude-opus-4.8-fast',
   'anthropic/claude-opus-5',
   'anthropic/claude-opus-5-fast',
+  'anthropic/claude-opus-5.5',
+  'anthropic/claude-opus-5.5-fast',
   'anthropic/claude-sonnet-4',
   'anthropic/claude-sonnet-4.5',
   'anthropic/claude-sonnet-4.6',
@@ -214,6 +216,10 @@ export const VERCEL_GATEWAY_CHAT_MODELS = [
   'openai/gpt-5.6-terra-fast',
   'openai/gpt-6-astra',
   'openai/gpt-6-astra-fast',
+  'openai/gpt-6-luna',
+  'openai/gpt-6-luna-fast',
+  'openai/gpt-6-sol',
+  'openai/gpt-6-sol-fast',
   'openai/gpt-live-1',
   'openai/gpt-oss-120b',
   'openai/gpt-oss-20b',
@@ -944,6 +950,24 @@ export type VercelGatewayChatModelProviderOptionsByName = {
       | 'include_reasoning'
       | 'response_format'
       | 'structured_outputs'
+    >
+  'anthropic/claude-opus-5.5': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
+    >
+  'anthropic/claude-opus-5.5-fast': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
     >
   'anthropic/claude-sonnet-4': VercelGatewayCommonOptions &
     Pick<
@@ -2562,6 +2586,54 @@ export type VercelGatewayChatModelProviderOptionsByName = {
       | 'response_format'
       | 'structured_outputs'
     >
+  'openai/gpt-6-luna': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'temperature'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
+      | 'response_format'
+      | 'structured_outputs'
+    >
+  'openai/gpt-6-luna-fast': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'temperature'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
+      | 'response_format'
+      | 'structured_outputs'
+    >
+  'openai/gpt-6-sol': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'temperature'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
+      | 'response_format'
+      | 'structured_outputs'
+    >
+  'openai/gpt-6-sol-fast': VercelGatewayCommonOptions &
+    Pick<
+      VercelGatewayBaseOptions,
+      | 'max_tokens'
+      | 'max_output_tokens'
+      | 'temperature'
+      | 'stop'
+      | 'reasoning'
+      | 'include_reasoning'
+      | 'response_format'
+      | 'structured_outputs'
+    >
   'openai/gpt-live-1': VercelGatewayCommonOptions &
     Pick<
       VercelGatewayBaseOptions,
@@ -3441,6 +3513,8 @@ export type VercelGatewayModelInputModalitiesByName = {
   'anthropic/claude-opus-4.8-fast': readonly ['text', 'image', 'document']
   'anthropic/claude-opus-5': readonly ['text', 'image', 'document']
   'anthropic/claude-opus-5-fast': readonly ['text', 'image', 'document']
+  'anthropic/claude-opus-5.5': readonly ['text', 'image', 'document']
+  'anthropic/claude-opus-5.5-fast': readonly ['text', 'image', 'document']
   'anthropic/claude-sonnet-4': readonly ['text', 'image', 'document']
   'anthropic/claude-sonnet-4.5': readonly ['text', 'image', 'document']
   'anthropic/claude-sonnet-4.6': readonly ['text', 'image', 'document']
@@ -3609,6 +3683,10 @@ export type VercelGatewayModelInputModalitiesByName = {
   'openai/gpt-5.6-terra-fast': readonly ['text', 'image', 'document']
   'openai/gpt-6-astra': readonly ['text', 'image', 'document']
   'openai/gpt-6-astra-fast': readonly ['text', 'image', 'document']
+  'openai/gpt-6-luna': readonly ['text', 'image', 'document']
+  'openai/gpt-6-luna-fast': readonly ['text', 'image', 'document']
+  'openai/gpt-6-sol': readonly ['text', 'image', 'document']
+  'openai/gpt-6-sol-fast': readonly ['text', 'image', 'document']
   'openai/gpt-live-1': readonly ['text', 'audio']
   'openai/gpt-oss-120b': readonly ['text']
   'openai/gpt-oss-20b': readonly ['text']
